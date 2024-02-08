@@ -313,7 +313,7 @@ include(UHDPython)
 
 PYTHON_CHECK_MODULE(
     "Python version ${PYTHON_MIN_VERSION} or greater"
-    "packaging, platform" "packaging.version.parse(platform.python_version()) >= packaging.version.parse('${PYTHON_MIN_VERSION}')"
+    "platform" "parse(platform.python_version()) >= parse('${PYTHON_MIN_VERSION}')"
     HAVE_PYTHON_PLAT_MIN_VERSION
 )
 
