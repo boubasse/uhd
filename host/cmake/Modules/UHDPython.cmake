@@ -134,10 +134,9 @@ macro(PYTHON_CHECK_MODULE desc mod cmd have)
         COMMAND ${PYTHON_EXECUTABLE} -c "
 #########################################
 from distutils.version import LooseVersion
-try: import ${mod}
-except: exit(1)
+import ${mod}
 try: assert ${cmd}
-except: exit(2)
+except: exit(1)
 exit(0)
 #########################################"
         RESULT_VARIABLE ${have}
